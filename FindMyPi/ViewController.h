@@ -20,6 +20,10 @@
 @property (weak) IBOutlet NSButton *ButtonClick;
 @property (weak) IBOutlet NSTextField *label;
 @property (weak) IBOutlet NSTextField *host_text_box;
+@property (weak) IBOutlet NSTextField *ip_text_box;
+@property (weak) IBOutlet NSTextField *ip_label;
+@property (weak) IBOutlet NSButton *IpButtonClick;
+
 
 @end
 

@@ -686,11 +686,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="772" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I0P-tJ-AZi">
-                                <rect key="frame" x="136" y="13" width="209" height="32"/>
+                                <rect key="frame" x="90" y="15" width="209" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Find IP Address" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="axesIndependently" inset="2" id="nvC-2p-mHN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -701,7 +701,7 @@
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UoF-Fh-Ygx">
-                                <rect key="frame" x="142" y="217" width="197" height="22"/>
+                                <rect key="frame" x="96" y="228" width="197" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Host Name" drawsBackground="YES" id="6Ki-qz-YO2">
                                     <font key="font" metaFont="system"/>
@@ -712,8 +712,43 @@
                                     </connections>
                                 </textFieldCell>
                             </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="em3-vi-Fta">
+                                <rect key="frame" x="495" y="228" width="197" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Ping IP" drawsBackground="YES" id="9cI-XX-LLj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="ip_text_box:" target="XfG-lQ-9wD" id="RRn-hY-pWk"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ank-rQ-j68">
+                                <rect key="frame" x="493" y="124" width="201" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="urL-R7-rkG">
+                                    <font key="font" metaFont="system" size="18"/>
+                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="iplabel1:" target="XfG-lQ-9wD" id="t15-qd-UOa"/>
+                                </connections>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ua2-qO-VzW">
+                                <rect key="frame" x="489" y="13" width="209" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="PING " bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="t5R-nI-cW6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="20"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="ipButtonClicked:" target="XfG-lQ-9wD" id="q5H-BF-hqj"/>
+                                </connections>
+                            </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DLV-jx-pQd">
-                                <rect key="frame" x="128" y="130" width="231" height="42"/>
+                                <rect key="frame" x="79" y="124" width="231" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="dAy-wn-3R2" userLabel="Label1">
                                     <font key="font" size="18" name=".SFNSText"/>
@@ -728,13 +763,16 @@
                     </view>
                     <connections>
                         <outlet property="ButtonClick" destination="I0P-tJ-AZi" id="CCW-ZC-lJk"/>
+                        <outlet property="IpButtonClick" destination="ua2-qO-VzW" id="Ja7-LH-RNh"/>
                         <outlet property="host_text_box" destination="UoF-Fh-Ygx" id="7b2-9B-jEU"/>
+                        <outlet property="ip_label" destination="ank-rQ-j68" id="4rA-Ab-FCc"/>
+                        <outlet property="ip_text_box" destination="em3-vi-Fta" id="sfh-CJ-Txn"/>
                         <outlet property="label" destination="DLV-jx-pQd" id="hcj-zu-tXh"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="221" y="655"/>
         </scene>
     </scenes>
 </document>

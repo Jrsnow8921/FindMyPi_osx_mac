@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		422A033C1DAD0909009A5D72 /* IPAddress.c in Sources */ = {isa = PBXBuildFile; fileRef = 422A033A1DAD0909009A5D72 /* IPAddress.c */; };
+		422A033F1DAD138B009A5D72 /* RemoteMac.c in Sources */ = {isa = PBXBuildFile; fileRef = 422A033D1DAD138B009A5D72 /* RemoteMac.c */; };
 		42ABEFDC1DA67FF4004D44E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42ABEFDB1DA67FF4004D44E2 /* AppDelegate.m */; };
 		42ABEFDF1DA67FF4004D44E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42ABEFDE1DA67FF4004D44E2 /* main.m */; };
 		42ABEFE21DA67FF4004D44E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42ABEFE11DA67FF4004D44E2 /* ViewController.m */; };
@@ -15,6 +17,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		422A033A1DAD0909009A5D72 /* IPAddress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IPAddress.c; sourceTree = "<group>"; };
+		422A033B1DAD0909009A5D72 /* IPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPAddress.h; sourceTree = "<group>"; };
+		422A033D1DAD138B009A5D72 /* RemoteMac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RemoteMac.c; sourceTree = "<group>"; };
+		422A033E1DAD138B009A5D72 /* RemoteMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteMac.h; sourceTree = "<group>"; };
 		42ABEFD71DA67FF4004D44E2 /* FindMyPi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMyPi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42ABEFDA1DA67FF4004D44E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		42ABEFDB1DA67FF4004D44E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -66,6 +72,10 @@
 				42ABEFE51DA67FF4004D44E2 /* Main.storyboard */,
 				42ABEFE81DA67FF4004D44E2 /* Info.plist */,
 				42ABEFDD1DA67FF4004D44E2 /* Supporting Files */,
+				422A033B1DAD0909009A5D72 /* IPAddress.h */,
+				422A033A1DAD0909009A5D72 /* IPAddress.c */,
+				422A033D1DAD138B009A5D72 /* RemoteMac.c */,
+				422A033E1DAD138B009A5D72 /* RemoteMac.h */,
 			);
 			path = FindMyPi;
 			sourceTree = "<group>";
@@ -155,8 +165,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				42ABEFE21DA67FF4004D44E2 /* ViewController.m in Sources */,
+				422A033F1DAD138B009A5D72 /* RemoteMac.c in Sources */,
 				42ABEFDF1DA67FF4004D44E2 /* main.m in Sources */,
 				42ABEFDC1DA67FF4004D44E2 /* AppDelegate.m in Sources */,
+				422A033C1DAD0909009A5D72 /* IPAddress.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +322,7 @@
 				42ABEFED1DA67FF4004D44E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
