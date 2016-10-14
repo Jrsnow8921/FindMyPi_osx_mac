@@ -22,13 +22,49 @@
     // Do any additional setup after loading the view.
 }
 
-- (IBAction)ipButtonClicked:(id)sender {
+- (void)startTimedTask
+{
+    NSTimer *fiveSecondTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(performBackgroundTask) userInfo:nil repeats:NO];
+}
+
+- (void)performBackgroundTask
+{
     NSString *ip_text = _ip_text_box.stringValue;
     const char *ipxx = [ip_text cStringUsingEncoding:NSUTF8StringEncoding];
     ipcc = ipxx;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self checkconnection];
+        });
+    });
+}
 
-   [self checkconnection];
+- (IBAction)ipButtonClicked:(id)sender {
 
+
+    self.load_progress.minValue = 0.0;
+    self.load_progress.maxValue = 5.0;
+    [self.load_progress setIndeterminate:NO];
+    
+    self.load_progress.doubleValue = 0.001; // if you want to see it animate the first iteration, you need to start it at some small, non-zero value
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        for (NSInteger i = 1; i <= self.load_progress.maxValue; i++)
+        {
+            [NSThread sleepForTimeInterval:1.0];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.load_progress setDoubleValue:(double)i];
+                [self.load_progress displayIfNeeded];
+
+                
+            });
+        }
+    });
+    [self startTimedTask];
+    
+    
+    
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -41,16 +77,35 @@
 
     //NSString * lab_text = _label.stringValue;
     NSString *host_text = _host_text_box.stringValue;
+    self.load_progress.minValue = 0.0;
+    self.load_progress.maxValue = 5.0;
+    [self.load_progress setIndeterminate:NO];
+    
+    self.load_progress.doubleValue = 0.001; // if you want to see it animate the first iteration, you need to start it at some small, non-zero value
+    
     
     if (host_text.length != 0)
     {
-        [self findmyip:(host_text)];
-        [self getmac:(@"127.0.0.1")];
+
         //if (![self isIp:(lab_text)])
         //{
         //    _label.stringValue = @"Nothing Found :'(";
         //}
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            for (NSInteger i = 1; i <= self.load_progress.maxValue; i++)
+            {
+                [NSThread sleepForTimeInterval:1.0];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.load_progress setDoubleValue:(double)i];
+                    [self.load_progress displayIfNeeded];
+                    
+                    
+                });
+            }
+        });
         
+        [self findmyip:(host_text)];
+        [self getmac:(@"127.0.0.1")];
     }
     
     else

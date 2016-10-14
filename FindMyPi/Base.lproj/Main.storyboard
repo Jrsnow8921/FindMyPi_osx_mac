@@ -759,6 +759,10 @@
                                     <action selector="label1:" target="XfG-lQ-9wD" id="AO6-pA-JAB"/>
                                 </connections>
                             </textField>
+                            <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="iUj-88-a5h">
+                                <rect key="frame" x="318" y="135" width="136" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </progressIndicator>
                         </subviews>
                     </view>
                     <connections>
@@ -768,6 +772,7 @@
                         <outlet property="ip_label" destination="ank-rQ-j68" id="4rA-Ab-FCc"/>
                         <outlet property="ip_text_box" destination="em3-vi-Fta" id="sfh-CJ-Txn"/>
                         <outlet property="label" destination="DLV-jx-pQd" id="hcj-zu-tXh"/>
+                        <outlet property="load_progress" destination="iUj-88-a5h" id="e7s-XA-dHn"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

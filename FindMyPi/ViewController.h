@@ -23,7 +23,6 @@
 @property (weak) IBOutlet NSTextField *ip_text_box;
 @property (weak) IBOutlet NSTextField *ip_label;
 @property (weak) IBOutlet NSButton *IpButtonClick;
-
-
+@property (weak) IBOutlet NSProgressIndicator *load_progress;
 @end
 
