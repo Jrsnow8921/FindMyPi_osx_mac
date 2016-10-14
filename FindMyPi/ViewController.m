@@ -32,12 +32,22 @@
     NSString *ip_text = _ip_text_box.stringValue;
     const char *ipxx = [ip_text cStringUsingEncoding:NSUTF8StringEncoding];
     ipcc = ipxx;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self checkconnection];
+    if ([self isValidIpAddress:(ip_text)])
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [self checkconnection];
+                
+            });
         });
-    });
+    }
+    else
+    {
+        _ip_label.stringValue = @"Invalid IP Address";
+    }
+
 }
 
 - (IBAction)ipButtonClicked:(id)sender {
@@ -152,6 +162,21 @@
     
     
 }
+
+- (BOOL)isValidIpAddress:(NSString *)ip {
+    const char *utf8 = [ip UTF8String];
+    
+    // Check valid IPv4.
+    struct in_addr dst;
+    int success = inet_pton(AF_INET, utf8, &(dst.s_addr));
+    if (success != 1) {
+        // Check valid IPv6.
+        struct in6_addr dst6;
+        success = inet_pton(AF_INET6, utf8, &dst6);
+    }
+    return (success == 1);
+}
+
 
 - (void)findmyip:(NSString *)host_name {
     NSString* hostname = host_name;
